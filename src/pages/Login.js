@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
+import Carregando from '../Components/Carregando';
 
 export default class Login extends Component {
   constructor() {
@@ -83,7 +84,7 @@ export default class Login extends Component {
                 </button>
               </label>
             </form>)
-          : <h1>Carregando...</h1>}
+          : <Carregando />}
         <Route exact path="/">
           {redirect && <Redirect to="/search" />}
         </Route>
