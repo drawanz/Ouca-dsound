@@ -13,7 +13,7 @@ export default class Login extends Component {
 
     this.state = {
       loginName: '',
-      isSaveButtonDisabled: true,
+      isEnterButtonDisabled: true,
       loading: false,
       redirect: false,
     };
@@ -47,17 +47,17 @@ export default class Login extends Component {
     const minNumber = 3;
     if (loginNameReplaced.length >= minNumber) {
       this.setState({
-        isSaveButtonDisabled: false,
+        isEnterButtonDisabled: false,
       });
     } else {
       this.setState({
-        isSaveButtonDisabled: true,
+        isEnterButtonDisabled: true,
       });
     }
   }
 
   render() {
-    const { loginName, isSaveButtonDisabled, loading, redirect } = this.state;
+    const { loginName, isEnterButtonDisabled, loading, redirect } = this.state;
 
     return (
       <div data-testid="page-login">
@@ -78,7 +78,7 @@ export default class Login extends Component {
                   type="button"
                   data-testid="login-submit-button"
                   onClick={ this.buttonClick }
-                  disabled={ isSaveButtonDisabled }
+                  disabled={ isEnterButtonDisabled }
                 >
                   Entrar
                 </button>
