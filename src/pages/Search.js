@@ -17,7 +17,6 @@ export default class Search extends Component {
       isSearchButtonDisabled: true,
       loading: false,
       searchResult: '',
-      sucessRequest: false,
     };
   }
 
