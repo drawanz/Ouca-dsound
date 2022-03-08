@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import Header from '../Components/Header';
 import getMusics from '../services/musicsAPI';
-import propTypes from 'prop-types';
+import MusicCard from '../Components/MusicCard';
 
 export default class Album extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      musics: '',
+      musics: [],
     };
 
     this.musics = this.musics.bind(this);
@@ -21,15 +22,17 @@ export default class Album extends Component {
 
   async teste() {
     const musics = await this.musics();
+    const removeFirstItemMusics = musics.shift();
+    console.log(removeFirstItemMusics);
     if (musics[0].artistName) {
       this.setState({
-        musics: musics,
+        musics,
       });
     }
   }
 
   async musics() {
-    const { match: { params: { id }} } = this.props;
+    const { match: { params: { id } } } = this.props;
     const requestedMusics = await getMusics(id);
     return requestedMusics;
   }
@@ -40,14 +43,18 @@ export default class Album extends Component {
     return (
       <div data-testid="page-album">
         <Header />
-        {musics !== ''
+        {musics.length > 0
           && (
             <div>
-              <h1 data-testid="artist-name">{ `${musics[0].artistName}` }</h1>
-              <h3>
-                { `${musics[0].artistName} -
-                ${musics[0].collectionName}` }
-              </h3>
+              <p data-testid="artist-name">{ musics[0].artistName }</p>
+              <p data-testid="album-name">{ musics[0].collectionName }</p>
+              {musics.map(({ trackName, trackId, previewUrl }) => (
+                <MusicCard
+                  key={ trackId }
+                  trackName={ trackName }
+                  trackId={ trackId }
+                  previewUrl={ previewUrl }
+                />))}
             </div>
           ) }
       </div>
@@ -55,4 +62,6 @@ export default class Album extends Component {
   }
 }
 
-Album.propTypes
+Album.propTypes = ({
+  id: propTypes.string,
+}).isRequired;
