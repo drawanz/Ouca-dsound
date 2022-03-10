@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Carregando from './Carregando';
 
 export default class MusicCard extends Component {
@@ -12,10 +12,28 @@ export default class MusicCard extends Component {
       favorite: false,
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.favoriteSong = this.favoriteSong.bind(this);
+    this.getFavorites = this.getFavorites.bind(this);
   }
 
-  async handleChange({ target }) {
+  componentDidMount() {
+    this.getFavorites();
+  }
+
+  async getFavorites() {
+    this.setState({ loading: true });
+    const favorites = await getFavoriteSongs();
+    this.setState({ loading: false });
+    const { trackId } = this.props;
+    console.log(favorites);
+    if (favorites.find((item) => item.trackId === trackId)) {
+      console.log('xablau');
+      this.setState({ loading: true, favorite: true });
+    }
+    this.setState({ loading: false });
+  }
+
+  async favoriteSong({ target }) {
     const { trackName, previewUrl, trackId } = this.props;
     console.log(target.checked);
     console.log(trackName);
@@ -53,7 +71,7 @@ export default class MusicCard extends Component {
                 data-testid={ `checkbox-music-${trackId}` }
                 type="checkbox"
                 checked={ favorite }
-                onChange={ this.handleChange }
+                onChange={ this.favoriteSong }
               />
             </label>
           </div>

@@ -22,8 +22,6 @@ export default class Album extends Component {
   async musics() {
     const { match: { params: { id } } } = this.props;
     const requestedMusics = await getMusics(id);
-    // const removeFirstItemMusics = requestedMusics.shift();
-    // console.log(removeFirstItemMusics);
     this.setState({
       musics: requestedMusics,
     });
