@@ -43,6 +43,7 @@ export default class MusicCard extends Component {
     if (target.checked) {
       this.setState({ loading: true, favorite: true });
       await addSong(obj);
+      this.getFavorites();
       this.setState({ loading: false });
     }
   }
