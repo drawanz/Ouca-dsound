@@ -11,13 +11,24 @@ export default class Favorites extends Component {
     this.state = {
       favorites: [],
       loading: false,
+      // reloadPage: false,
     };
 
     this.recoverFavorites = this.recoverFavorites.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
   }
 
   componentDidMount() {
     this.recoverFavorites();
+  }
+
+  handleClick() {
+    // this.setState({ reloadPage: true });
+  }
+
+  handleClick2() {
+    // this.setState({ reloadPage: false });
   }
 
   async recoverFavorites() {
@@ -40,8 +51,11 @@ export default class Favorites extends Component {
               trackName={ trackName }
               previewUrl={ previewUrl }
               trackId={ trackId }
+              reloadComponent={ this.reloadComponent }
             />
           ))}
+        <button type="button" onClick={ this.handleClick }>aa</button>
+        <button type="button" onClick={ this.handleClick2 }>aa2</button>
       </div>
     );
   }

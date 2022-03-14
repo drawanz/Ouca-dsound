@@ -36,6 +36,7 @@ export default class Search extends Component {
       resultArtistBandName: artistBandName,
     }, async () => {
       const request = await searchAlbumsAPI(artistBandName);
+      console.log(request);
       this.setState({
         loading: false,
         artistBandName: '',
