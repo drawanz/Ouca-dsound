@@ -67,7 +67,7 @@ export default class MusicCard extends Component {
 
   render() {
     const { loading, favorite } = this.state;
-    const { trackName, previewUrl, trackId } = this.props;
+    const { trackName, previewUrl, trackId, handleClick } = this.props;
 
     return (
       <section>
@@ -89,6 +89,7 @@ export default class MusicCard extends Component {
                 data-testid={ `checkbox-music-${trackId}` }
                 type="checkbox"
                 checked={ favorite }
+                // onChange={ this.handleChange }
                 onChange={ this.handleChange }
               />
             </label>

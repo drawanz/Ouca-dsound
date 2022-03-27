@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Album from './pages/Album';
@@ -7,6 +8,7 @@ import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
+import AppCss from './AppCss.css';
 
 class App extends React.Component {
   render() {
@@ -14,12 +16,13 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={ Login } />
-          <Route path="/search" component={ Search } />
+          <Route exact path="/search" component={ Search } />
           <Route
+            exact
             path="/album/:id"
             render={ (props) => <Album { ...props } /> }
           />
-          <Route path="/favorites" component={ Favorites } />
+          <Route exact path="/favorites" component={ Favorites } />
           <Route exact path="/profile" component={ Profile } />
           <Route exact path="/profile/edit" component={ ProfileEdit } />
           <Route path="*" component={ NotFound } />

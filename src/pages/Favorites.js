@@ -24,7 +24,7 @@ export default class Favorites extends Component {
   }
 
   handleClick() {
-    // this.setState({ reloadPage: true });
+    this.recoverFavorites();
   }
 
   handleClick2() {
@@ -51,11 +51,11 @@ export default class Favorites extends Component {
               trackName={ trackName }
               previewUrl={ previewUrl }
               trackId={ trackId }
-              reloadComponent={ this.reloadComponent }
+              handleClick={ this.handleClick }
             />
           ))}
-        <button type="button" onClick={ this.handleClick }>aa</button>
-        <button type="button" onClick={ this.handleClick2 }>aa2</button>
+        {/* <button type="button" onClick={ this.handleClick }>aa</button>
+        <button type="button" onClick={ this.handleClick2 }>aa2</button> */}
       </div>
     );
   }

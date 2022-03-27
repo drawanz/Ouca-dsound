@@ -39,11 +39,10 @@ export default class ProfileEdit extends Component {
   }
 
   async buttonClick() {
-    const { name, email, description, image } = this.state;
-    const obj = { name, email, image, description };
-    await updateUser(obj);
-    console.log(obj);
-    this.setState({ redirect: true });
+    const { name, email, image, description } = this.state;
+    this.setState({ loading: true });
+    await updateUser({ name, email, image, description });
+    this.setState({ loading: false, redirect: true });
   }
 
   validationCheck() {
@@ -80,7 +79,8 @@ export default class ProfileEdit extends Component {
   async requestUser() {
     this.setState({ loading: true });
     const { name, email, description, image } = await getUser();
-    this.setState({ name, email, description, image, loading: false });
+    this.setState(({ name, email, description, image, loading: false }),
+      () => this.validationCheck());
   }
 
   render() {
@@ -90,7 +90,7 @@ export default class ProfileEdit extends Component {
     return (
       <div data-testid="page-profile-edit">
         <Header />
-        <h1>ProfileEdit</h1>
+        <h1>Editar perfil</h1>
         {loading === true
           ? <Carregando />
           : (
@@ -99,6 +99,7 @@ export default class ProfileEdit extends Component {
                 Nome:
                 <input
                   data-testid="edit-input-name"
+                  type="text"
                   name="name"
                   value={ name }
                   id="name"
@@ -109,6 +110,7 @@ export default class ProfileEdit extends Component {
                 E-mail:
                 <input
                   data-testid="edit-input-email"
+                  type="email"
                   name="email"
                   value={ email }
                   id="email"
@@ -119,6 +121,7 @@ export default class ProfileEdit extends Component {
                 Descrição:
                 <input
                   data-testid="edit-input-description"
+                  type="text"
                   name="description"
                   value={ description }
                   id="description"
@@ -129,6 +132,7 @@ export default class ProfileEdit extends Component {
                 Imagem:
                 <input
                   data-testid="edit-input-image"
+                  type="text"
                   name="image"
                   value={ image }
                   id="image"
@@ -141,7 +145,7 @@ export default class ProfileEdit extends Component {
                 disabled={ buttonDisabled }
                 onClick={ this.buttonClick }
               >
-                Salvar
+                salvar
               </button>
             </form>
           )}

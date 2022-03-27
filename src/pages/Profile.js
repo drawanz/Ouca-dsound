@@ -33,7 +33,6 @@ export default class Profile extends Component {
     return (
       <div data-testid="page-profile">
         <Header />
-        <h1>Profile</h1>
         {name === ''
           ? <Carregando />
           : (
@@ -42,7 +41,7 @@ export default class Profile extends Component {
               <p>{ email }</p>
               <p>{ description }</p>
               <img src={ image } alt="profile" data-testid="profile-image" />
-              <Link to="/profile/edit"><p>Editar perfil</p></Link>
+              <Link to="/profile/edit">Editar perfil</Link>
             </div>
           )}
       </div>
