@@ -22,8 +22,8 @@ a {
   color: rgb(20, 19, 19);
 }
 
-.container-links img {
-  display: none;
+.image {
+  width: 3%;
 }
 
 .container-links {
@@ -31,14 +31,14 @@ a {
   display: flex;
   height: 3em;
   justify-content: space-between;
-  width: 60%;
+  width: 20%;
 }
 
 .container-user {
   align-items: center;
   display: flex;
-  justify-content: space-between;
-  width: 25%;
+  justify-content: flex-end;
+  width: 20%;
 }
 
 .container-user img {
@@ -47,4 +47,41 @@ a {
   height: 2em;
   object-fit: cover;
   width: 3em;
+}
+
+@media screen and ( max-width : 1000px ) {
+
+  .image {
+    /* width: 5%; */
+  }
+
+  .header-component {
+    font-size: small;
+  }
+}
+
+@media screen and ( max-width : 800px ) {
+
+  .image {
+    width: 4%;
+  }
+
+  .header-component {
+    font-size: smaller;
+  }
+
+  .container-links, .container-user {
+    width: 30%;
+  }
+}
+
+@media screen and ( max-width : 550px ) {
+
+  .image {
+    display: none;
+  }
+
+  .container-links {
+    width: 50%;
+  }
 }

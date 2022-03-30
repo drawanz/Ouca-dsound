@@ -35,11 +35,11 @@ export default class Header extends Component {
     return (
       <header data-testid="header-component" className="header-component">
         <div className="container-links">
-          <img src={ Logo } alt="logo" />
           <Link data-testid="link-to-search" to="/search"><p>Search</p></Link>
           <Link data-testid="link-to-favorites" to="/favorites"><p>Favorites</p></Link>
           <Link data-testid="link-to-profile" to="/profile"><p>Profile</p></Link>
         </div>
+        <img className="image" src={ Logo } alt="logo" />
         {loading
           ? <p>Carregando...</p>
           : (

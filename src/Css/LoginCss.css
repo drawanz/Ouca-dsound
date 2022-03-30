@@ -95,3 +95,10 @@ form h1 {
   padding-bottom: 5%;
 }
 
+@media screen and ( max-width : 600px ) {
+
+  header {
+    font-size: small;
+  }
+}
+
