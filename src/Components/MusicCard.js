@@ -89,6 +89,7 @@ export default class MusicCard extends Component {
                 data-testid={ `checkbox-music-${trackId}` }
                 type="checkbox"
                 checked={ favorite }
+                onClick={ handleClick }
                 // onChange={ this.handleChange }
                 onChange={ this.handleChange }
               />

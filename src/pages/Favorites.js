@@ -32,9 +32,10 @@ export default class Favorites extends Component {
   }
 
   async recoverFavorites() {
-    this.setState({ loading: true });
-    const recoveredFavorites = await getFavoriteSongs();
-    this.setState({ favorites: recoveredFavorites, loading: false });
+    this.setState({ loading: true }, async () => {
+      const recoveredFavorites = await getFavoriteSongs();
+      this.setState({ favorites: recoveredFavorites, loading: false });
+    });
   }
 
   render() {

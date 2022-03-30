@@ -11,10 +11,7 @@ class Footer extends Component {
         <div className="container-corporation">
           <p>©2022 DSound</p>
         </div>
-        <div className="container-logo">
-          <img src={ Logo } alt="logo" />
-          {/* <p>DSound</p> */}
-        </div>
+        <img className="img" src={ Logo } alt="logo" />
         <div className="container-icones">
           <FaFacebook />
           <FaYoutube />

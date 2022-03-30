@@ -73,7 +73,7 @@ export default class Login extends Component {
           ? (
             <div>
               <header>
-                <img src={ Logo } alt="logo" />
+                <img className="img" src={ Logo } alt="logo" />
                 <p>DSound</p>
               </header>
               <form>
@@ -100,10 +100,18 @@ export default class Login extends Component {
                 </div>
               </form>
               <div className="div-imgs">
-                <img className="img-up" src={ manOutside } alt="manOutside" />
-                <img className="img-down" src={ womanDancing } alt="womanDancing" />
-                <img className="img-up" src={ womanRunning } alt="womanRunning" />
-                <img className="img-down" src={ manWorking } alt="manWorking" />
+                <div className="img-down">
+                  <img src={ manOutside } alt="manOutside" />
+                </div>
+                <div className="img-up">
+                  <img src={ womanDancing } alt="womanDancing" />
+                </div>
+                <div className="img-down">
+                  <img src={ womanRunning } alt="womanRunning" />
+                </div>
+                <div className="img-up">
+                  <img src={ manWorking } alt="manWorking" />
+                </div>
               </div>
               <Footer />
             </div>)
