@@ -1,0 +1,114 @@
+* {
+  border: 0;
+  box-sizing: inherit;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 3% 0 5%;
+}
+
+form input {
+  border: 2px solid #545454;
+  border-radius: 5px;
+  height: 2em;
+  width: 11em;
+}
+
+form button:disabled {
+  border-radius: 4px;
+  font-weight: 700;
+  height: 2em;
+  margin-top: 0.5em;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+form button:enabled {
+  background-color: #545454;
+  border-radius: 4px;
+  color: antiquewhite;
+  font-weight: 700;
+  height: 2em;
+  margin-top: 0.5em;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.nao-encontrado {
+  text-align: center;
+}
+
+.container-busca-encontrada {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.albuns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70%;
+}
+
+.album {
+  border: 2px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2.5%;
+  width: 10%;
+}
+
+.album img {
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+
+.album p {
+  text-align: center;
+}
+
+@media screen and ( max-width : 900px ) {
+
+  .album {
+    width: 15%;
+  }
+}
+
+@media screen and ( max-width : 700px ) {
+
+  .album {
+    width: 17.5%;
+  }
+}
+
+@media screen and ( max-width : 600px ) {
+
+  .album {
+    width: 20%;
+  }
+}
+
+@media screen and ( max-width : 450px ) {
+
+  .album {
+    width: 27.5%;
+  }
+}
+
+@media screen and ( max-width : 400px ) {
+
+  .album {
+    width: 37.5%;
+  }
+}

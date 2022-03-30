@@ -51,10 +51,6 @@ a {
 
 @media screen and ( max-width : 1000px ) {
 
-  .image {
-    /* width: 5%; */
-  }
-
   .header-component {
     font-size: small;
   }
