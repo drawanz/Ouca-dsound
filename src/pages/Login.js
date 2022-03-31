@@ -72,11 +72,11 @@ export default class Login extends Component {
         {!loading
           ? (
             <div>
-              <header>
+              <header className="header-login">
                 <img className="img" src={ Logo } alt="logo" />
                 <p>DSound</p>
               </header>
-              <form>
+              <form className="form-login">
                 <h1>Faça o login e ouça suas músicas favoritas!</h1>
                 <div className="div-inputs">
                   <label htmlFor="login-name-input">

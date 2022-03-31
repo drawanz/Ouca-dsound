@@ -11,7 +11,7 @@
   width: 3%;
 }
 
-header {
+.header-login {
   align-items: center;
   background-color: #545454;
   color: antiquewhite;
@@ -21,7 +21,7 @@ header {
   justify-content: center;
 }
 
-form {
+.form-login {
   align-items: center;
   display: flex;
   flex-flow: column wrap;
@@ -30,7 +30,7 @@ form {
   margin-top: 3%;
 }
 
-form h1 {
+.form-login h1 {
   font-size: large;
   text-align: center;
 }

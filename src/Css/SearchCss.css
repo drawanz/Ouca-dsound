@@ -8,21 +8,21 @@
   vertical-align: baseline;
 }
 
-form {
+.form-search {
   align-items: center;
   display: flex;
   flex-flow: column wrap;
   margin: 3% 0 5%;
 }
 
-form input {
+.form-search input {
   border: 2px solid #545454;
   border-radius: 5px;
   height: 2em;
   width: 11em;
 }
 
-form button:disabled {
+.form-search button:disabled {
   border-radius: 4px;
   font-weight: 700;
   height: 2em;
@@ -31,7 +31,7 @@ form button:disabled {
   padding-right: 8px;
 }
 
-form button:enabled {
+.form-search button:enabled {
   background-color: #545454;
   border-radius: 4px;
   color: antiquewhite;
@@ -43,7 +43,9 @@ form button:enabled {
 }
 
 .nao-encontrado {
+  height: 100%;
   text-align: center;
+  width: 100%;
 }
 
 .container-busca-encontrada {
@@ -69,13 +71,42 @@ form button:enabled {
 }
 
 .album img {
+  border: 4px solid green;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
 }
 
 .album p {
   text-align: center;
+}
+
+.p-search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.p-search .resultado-search {
+  background-color: #545454;
+  border-radius: 4px;
+  color: antiquewhite;
+  font-weight: 700;
+  height: 2em;
+  margin-top: 0.5em;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  text-align: center;
+  width: fit-content;
+}
+
+.page-search {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and ( max-width : 900px ) {

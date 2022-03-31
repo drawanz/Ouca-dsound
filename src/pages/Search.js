@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Carregando from '../Components/Carregando';
+import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+// eslint-disable-next-line no-unused-vars
 import SearchCss from '../Css/SearchCss.css';
 
 export default class Search extends Component {
@@ -67,12 +69,12 @@ export default class Search extends Component {
       searchResult, resultArtistBandName } = this.state;
 
     return (
-      <div data-testid="page-search">
+      <div className="page-search">
         <Header />
         {loading
           ? (<Carregando />)
           : (
-            <form>
+            <form className="form-search">
               <input
                 name="artistBandName"
                 data-testid="search-artist-input"
@@ -91,10 +93,16 @@ export default class Search extends Component {
               </button>
             </form>)}
         {searchResult.length === 0
-          ? <p className="nao-encontrado">Nenhum álbum foi encontrado</p>
+          ? (
+            <div className="nao-encontrado p-search">
+              <p className="resultado-search">Nenhum álbum foi encontrado</p>
+            </div>
+          )
           : (
-            <div className="container-busca-encontrada">
-              <p>{ `Resultado de álbuns de: ${resultArtistBandName}` }</p>
+            <div className="container-busca-encontrada p-search">
+              <p className="resultado-search">
+                { `Álbuns de:  ${resultArtistBandName}` }
+              </p>
               <div className="albuns">
                 {searchResult.map(({ collectionId, collectionName, artworkUrl100 }) => (
                   <div key={ collectionId } className="album">
@@ -109,6 +117,7 @@ export default class Search extends Component {
               </div>
             </div>
           ) }
+        <Footer />
       </div>
     );
   }

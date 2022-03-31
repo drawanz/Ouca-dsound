@@ -7,7 +7,7 @@ import FooterCss from '../Css/FooterCss.css';
 class Footer extends Component {
   render() {
     return (
-      <footer>
+      <footer className="footer">
         <div className="container-corporation">
           <p>©2022 DSound</p>
         </div>

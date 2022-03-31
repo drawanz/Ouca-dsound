@@ -41,7 +41,11 @@ export default class Header extends Component {
         </div>
         <img className="image" src={ Logo } alt="logo" />
         {loading
-          ? <p>Carregando...</p>
+          ? (
+            <div className="container-user">
+              <p>Carregando...</p>
+            </div>
+          )
           : (
             <div className="container-user">
               <img src={ userImage } alt="userImage" />
