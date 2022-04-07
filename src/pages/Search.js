@@ -110,7 +110,9 @@ export default class Search extends Component {
                       to={ `/album/${collectionId}` }
                       data-testid={ `link-to-album-${collectionId}` }
                     >
-                      <img src={ artworkUrl100 } alt={ artworkUrl100 } />
+                      <div>
+                        <img src={ artworkUrl100 } alt={ artworkUrl100 } />
+                      </div>
                       <p>{ collectionName }</p>
                     </Link>
                   </div>))}

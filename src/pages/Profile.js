@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Components/Header';
+import Footer from '../Components/Footer';
+// eslint-disable-next-line no-unused-vars
+import ProfileCss from '../Css/ProfileCss.css';
 import Carregando from '../Components/Carregando';
 import { getUser } from '../services/userAPI';
 
@@ -11,7 +14,8 @@ export default class Profile extends Component {
     this.state = {
       name: '',
       email: '',
-      description: '',
+      defaultDescription: 'Usuário padrão',
+      defaultImage: 'https://media-public.canva.com/stf1k/MAC3CSstf1k/3/t.png',
       image: '',
     };
 
@@ -28,22 +32,40 @@ export default class Profile extends Component {
   }
 
   render() {
-    const { name, email, description, image } = this.state;
+    const { name, email, description, defaultDescription, image,
+      defaultImage } = this.state;
 
     return (
-      <div data-testid="page-profile">
+      <div className="page-profile" data-testid="page-profile">
         <Header />
-        {name === ''
-          ? <Carregando />
-          : (
-            <div>
-              <p>{ name }</p>
-              <p>{ email }</p>
-              <p>{ description }</p>
-              <img src={ image } alt="profile" data-testid="profile-image" />
-              <Link to="/profile/edit">Editar perfil</Link>
-            </div>
-          )}
+        <div className="page-profile-user">
+          {name === ''
+            ? <Carregando />
+            : (
+              <div className="page-profile-user">
+                { image ? (
+                  <img src={ image } alt="profile" data-testid="profile-image" />
+                ) : (
+                  <img src={ defaultImage } alt="profile" data-testid="profile-image" />
+                )}
+                <p>{ `Nome: ${name}` }</p>
+                <p>{ `Email: ${email}` }</p>
+                { description ? (
+                  <p>{ description }</p>
+                ) : (
+                  <p>{ defaultDescription }</p>
+                )}
+                <Link to="/profile/edit">
+                  <button
+                    type="button"
+                  >
+                    Editar perfil
+                  </button>
+                </Link>
+              </div>
+            )}
+        </div>
+        <Footer />
       </div>
     );
   }

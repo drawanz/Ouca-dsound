@@ -14,7 +14,8 @@
   display: flex;
   justify-content: space-between;
   justify-self: flex-end;
-  margin-top: 5.3%;
+  /* margin-top: 2.85%; */
+  flex-shrink: 0;
 }
 
 .container-logo img {

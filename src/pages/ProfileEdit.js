@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Header from '../Components/Header';
+// eslint-disable-next-line no-unused-vars
+import ProfileEditCss from '../Css/ProfileEditCss.css';
 import { getUser, updateUser } from '../services/userAPI';
 import Carregando from '../Components/Carregando';
 
@@ -94,7 +96,7 @@ export default class ProfileEdit extends Component {
         {loading === true
           ? <Carregando />
           : (
-            <form>
+            <form className="form-page-profile-edit">
               <label htmlFor="name">
                 Nome:
                 <input

@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import { FaHeart } from 'react-icons/fa';
+// import { HiOutlineHeart } from 'react-icons/hi';
+import {
+  addSong,
+  getFavoriteSongs,
+  removeSong,
+} from '../services/favoriteSongsAPI';
 import Carregando from './Carregando';
+import MusicCardCss from '../Css/MusicCardCss.css';
 
 export default class MusicCard extends Component {
   constructor() {
@@ -67,22 +74,23 @@ export default class MusicCard extends Component {
 
   render() {
     const { loading, favorite } = this.state;
-    const { trackName, previewUrl, trackId, handleClick } = this.props;
+    const { trackName, previewUrl, trackId, handleClick, artwork } = this.props;
 
     return (
       <section>
         {loading ? (
-          <Carregando />
+          true
+          // <Carregando />
         ) : (
-          <div>
-            <p>{ trackName }</p>
+          <div className="container-music-card">
+            <p>{trackName}</p>
+            {/* <img src={ artwork } alt={ artwork } /> */}
             <audio data-testid="audio-component" src={ previewUrl } controls>
               <track kind="captions" />
               O seu navegador não suporta o elemento
               <code>audio</code>
             </audio>
             <label htmlFor="inputFavorita">
-              Favorita
               <input
                 name="favorite"
                 id="inputFavorita"
@@ -90,9 +98,13 @@ export default class MusicCard extends Component {
                 type="checkbox"
                 checked={ favorite }
                 onClick={ handleClick }
-                // onChange={ this.handleChange }
                 onChange={ this.handleChange }
               />
+              {/* {favorite ? (
+                <FaHeart className="heart-favorited" />
+              ) : (
+                <FaHeart className="heart-not-favorited" />
+              )} */}
             </label>
           </div>
         )}
@@ -101,8 +113,9 @@ export default class MusicCard extends Component {
   }
 }
 
-MusicCard.propTypes = ({ // aprendido em https://pt-br.reactjs.org/docs/typechecking-with-proptypes.html
+MusicCard.propTypes = {
+  // aprendido em https://pt-br.reactjs.org/docs/typechecking-with-proptypes.html
   trackName: propTypes.string,
   previewUrl: propTypes.string,
   trackId: propTypes.string,
-}).isRequired;
+}.isRequired;

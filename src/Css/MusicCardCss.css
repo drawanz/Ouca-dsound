@@ -1,0 +1,52 @@
+/* * {
+  border: 0;
+  box-sizing: inherit;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+} */
+
+.container-music-card {
+  border: 2px solid;
+}
+
+.container-music-card input {
+  /* order: 1; */
+  /* display: none; */
+  width: 30px;
+  height: 30px;
+}
+
+.heart-favorited {
+  /* order: 2; */
+  position: relative;
+  color: red;
+  bottom: 2px;
+  /* left: 22px; */
+  right: 20px;
+  width: 30px;
+  height: 30px;
+
+}
+
+.heart-not-favorited {
+  /* order: 2; */
+  width: 30px;
+  height: 30px;
+
+  border: 2px solid red;
+
+  bottom: 2px;
+  /* left: 22px; */
+  right: 20px;
+
+
+  position: relative;
+  color: white;
+}
+/* 
+.container-music-card p {
+  text-align: center;
+} */

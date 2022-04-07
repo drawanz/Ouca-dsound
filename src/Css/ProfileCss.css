@@ -1,0 +1,36 @@
+.page-profile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: auto;
+  width: 100%;
+}
+
+.page-profile-user {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.page-profile-user > * {
+  margin-top: 2%;
+}
+
+.page-profile-user img {
+  border-radius: 5px;
+  width: 10%;
+}
+
+.page-profile-user button {
+  background-color: #545454;
+  border-radius: 4px;
+  color: antiquewhite;
+  font-weight: 700;
+  height: 2em;
+  margin-top: 0.5em;
+  padding-left: 8px;
+  padding-right: 8px;
+}

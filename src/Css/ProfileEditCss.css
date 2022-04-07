@@ -1,0 +1,10 @@
+.page-profile-edit {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-page-profile-edit {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}

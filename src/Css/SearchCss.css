@@ -58,11 +58,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2%;
   width: 70%;
 }
 
 .album {
-  border: 2px solid red;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -70,8 +70,12 @@
   width: 10%;
 }
 
+.album div {
+  width: 100%;
+}
+
 .album img {
-  border: 4px solid green;
+  border-radius: 5px;
   height: auto;
   object-fit: cover;
   width: 100%;
@@ -138,6 +142,13 @@
 }
 
 @media screen and ( max-width : 400px ) {
+
+  .album {
+    margin-top: 10%;
+  }
+}
+
+@media screen and ( max-width : 350px ) {
 
   .album {
     width: 37.5%;

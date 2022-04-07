@@ -13,6 +13,7 @@ export default class Header extends Component {
     this.state = {
       loading: false,
       user: '',
+      image: '',
     };
   }
 
@@ -22,16 +23,17 @@ export default class Header extends Component {
 
   getUserApi = () => {
     this.setState({ loading: true }, async () => {
-      const { name } = await getUser();
+      const { name, image } = await getUser();
       this.setState({
         user: name,
+        image,
         loading: false,
       });
     });
   }
 
   render() {
-    const { user, loading } = this.state;
+    const { user, loading, image } = this.state;
     return (
       <header data-testid="header-component" className="header-component">
         <div className="container-links">
@@ -48,7 +50,11 @@ export default class Header extends Component {
           )
           : (
             <div className="container-user">
-              <img src={ userImage } alt="userImage" />
+              {image !== '' ? (
+                <img src={ image } alt="userImage" />
+              ) : (
+                <img src={ userImage } alt="userImage" />
+              )}
               <p data-testid="header-user-name">{ user }</p>
             </div>)}
       </header>

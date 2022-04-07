@@ -7,6 +7,17 @@
   vertical-align: baseline;
 }
 
+.page-login {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.page-login-content {
+  flex: 1 0 auto;
+}
+
 .img {
   width: 3%;
 }
@@ -22,11 +33,6 @@
 }
 
 .form-login {
-  align-items: center;
-  display: flex;
-  flex-flow: column wrap;
-  height: 5%;
-  justify-content: center;
   margin-top: 3%;
 }
 
@@ -46,6 +52,7 @@
   border: 2px solid #545454;
   border-radius: 5px;
   height: 2em;
+  margin-top: 3%;
   width: 10em;
 }
 

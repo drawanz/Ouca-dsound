@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-depth */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { Redirect, Route } from 'react-router-dom';
@@ -21,6 +22,7 @@ export default class Login extends Component {
 
     this.state = {
       loginName: '',
+      loginEmail: '',
       isEnterButtonDisabled: true,
       loading: false,
       redirect: false,
@@ -36,12 +38,12 @@ export default class Login extends Component {
   }
 
   async buttonClick() {
-    const { loginName } = this.state;
+    const { loginName, loginEmail } = this.state;
 
     this.setState({
       loading: true,
     }, async () => {
-      await createUser({ name: loginName });
+      await createUser({ name: loginName, email: loginEmail });
       this.setState({
         loading: false,
         redirect: true,
@@ -50,10 +52,11 @@ export default class Login extends Component {
   }
 
   validationCheck() {
-    const { loginName } = this.state;
+    const { loginName, loginEmail } = this.state;
     const loginNameReplaced = loginName.replaceAll(' ', '');
     const minNumber = 3;
-    if (loginNameReplaced.length >= minNumber) {
+    if (loginNameReplaced.length >= minNumber
+      && loginEmail.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)) {
       this.setState({
         isEnterButtonDisabled: false,
       });
@@ -65,57 +68,65 @@ export default class Login extends Component {
   }
 
   render() {
-    const { loginName, isEnterButtonDisabled, loading, redirect } = this.state;
+    const { loginName, loginEmail,
+      isEnterButtonDisabled, loading, redirect } = this.state;
 
     return (
-      <div data-testid="page-login">
-        {!loading
-          ? (
-            <div>
-              <header className="header-login">
-                <img className="img" src={ Logo } alt="logo" />
-                <p>DSound</p>
-              </header>
-              <form className="form-login">
-                <h1>Faça o login e ouça suas músicas favoritas!</h1>
-                <div className="div-inputs">
-                  <label htmlFor="login-name-input">
-                    <input
-                      id="login-name-input"
-                      data-testid="login-name-input"
-                      placeholder="Digite seu usuário"
-                      name="loginName"
-                      value={ loginName }
-                      onChange={ this.handleChange }
-                    />
-                  </label>
-                  <button
-                    type="button"
-                    data-testid="login-submit-button"
-                    onClick={ this.buttonClick }
-                    disabled={ isEnterButtonDisabled }
-                  >
-                    Entrar
-                  </button>
-                </div>
-              </form>
-              <div className="div-imgs">
-                <div className="img-down">
-                  <img src={ manOutside } alt="manOutside" />
-                </div>
-                <div className="img-up">
-                  <img src={ womanDancing } alt="womanDancing" />
-                </div>
-                <div className="img-down">
-                  <img src={ womanRunning } alt="womanRunning" />
-                </div>
-                <div className="img-up">
-                  <img src={ manWorking } alt="manWorking" />
-                </div>
-              </div>
-              <Footer />
-            </div>)
-          : <Carregando />}
+      <div className="page-login" data-testid="page-login">
+        <div className="page-login-content">
+          <header className="header-login">
+            <img className="img" src={ Logo } alt="logo" />
+            <p>DSound</p>
+          </header>
+          <form className="form-login">
+            <h1>Faça o login e ouça suas músicas favoritas!</h1>
+            <div className="div-inputs">
+              <label htmlFor="login-name-input">
+                <input
+                  id="login-name-input"
+                  data-testid="login-name-input"
+                  placeholder="Digite seu usuário"
+                  name="loginName"
+                  value={ loginName }
+                  onChange={ this.handleChange }
+                />
+              </label>
+              <label htmlFor="login-email-input">
+                <input
+                  id="login-email-input"
+                  data-testid="login-email-input"
+                  placeholder="Digite seu email"
+                  name="loginEmail"
+                  value={ loginEmail }
+                  onChange={ this.handleChange }
+                />
+              </label>
+              <button
+                type="button"
+                data-testid="login-submit-button"
+                onClick={ this.buttonClick }
+                disabled={ isEnterButtonDisabled }
+              >
+                Entrar
+              </button>
+            </div>
+          </form>
+          <div className="div-imgs">
+            <div className="img-down">
+              <img src={ manOutside } alt="manOutside" />
+            </div>
+            <div className="img-up">
+              <img src={ womanDancing } alt="womanDancing" />
+            </div>
+            <div className="img-down">
+              <img src={ womanRunning } alt="womanRunning" />
+            </div>
+            <div className="img-up">
+              <img src={ manWorking } alt="manWorking" />
+            </div>
+          </div>
+        </div>
+        <Footer />
         <Route exact path="/">
           {redirect && <Redirect to="/search" />}
         </Route>
