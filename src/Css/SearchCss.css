@@ -32,9 +32,10 @@
 }
 
 .form-search button:enabled {
-  background-color: #545454;
+  background-color: #34e4ea;
+  border: 2px solid #545454;
   border-radius: 4px;
-  color: antiquewhite;
+  color: #545454;
   font-weight: 700;
   height: 2em;
   margin-top: 0.5em;
@@ -67,7 +68,7 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 2.5%;
-  width: 10%;
+  width: 8%;
 }
 
 .album div {

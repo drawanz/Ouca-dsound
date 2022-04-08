@@ -49,21 +49,47 @@ a {
   width: 3em;
 }
 
+@media screen and ( max-width : 1200px ) {
+
+  .header-component {
+    font-size: small;
+  }
+
+  .image {
+    width: 4%;
+  }
+}
+
 @media screen and ( max-width : 1000px ) {
 
   .header-component {
     font-size: small;
+  }
+
+  .image {
+    width: 5%;
   }
 }
 
 @media screen and ( max-width : 800px ) {
 
   .image {
-    width: 4%;
+    width: 6%;
   }
 
   .header-component {
     font-size: smaller;
+  }
+
+  .container-links, .container-user {
+    width: 30%;
+  }
+}
+
+@media screen and ( max-width : 700px ) {
+
+  .image {
+    width: 7%;
   }
 
   .container-links, .container-user {

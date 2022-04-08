@@ -12,10 +12,9 @@
   background-color: #545454;
   color: white;
   display: flex;
+  flex-shrink: 0;
   justify-content: space-between;
   justify-self: flex-end;
-  /* margin-top: 2.85%; */
-  flex-shrink: 0;
 }
 
 .container-logo img {
@@ -41,5 +40,16 @@
 
   .container-corporation {
     font-size: 80%;
+  }
+
+  .container-logo img {
+    width: 30%;
+  }
+}
+
+@media screen and ( max-width : 400px ) {
+
+  .container-logo img {
+    width: 50%;
   }
 }

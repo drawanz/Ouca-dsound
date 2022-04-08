@@ -6,31 +6,71 @@
   width: 100%;
 }
 
-.page-profile-user {
+.page-profile-user-container {
   align-items: center;
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
 }
 
-.page-profile-user > * {
-  margin-top: 2%;
+.page-profile-user {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-profile-user img {
-  border-radius: 5px;
-  width: 10%;
+  border-radius: 4px;
+  margin-bottom: 5%;
+  margin-top: 10%;
+  width: 60%;
 }
 
-.page-profile-user button {
-  background-color: #545454;
+.page-profile-user h1 {
+  font-weight: 700;
+}
+
+.page-profile-user form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.page-profile-user form input {
+  border: 2px solid #545454;
+  border-radius: 5px;
+  height: 2em;
+  margin-top: 3%;
+  width: 10em;
+}
+
+.page-profile-user form label {
+  margin-top: 10%;
+}
+
+.page-profile-user form label input {
+  display: block;
+}
+
+.page-profile-user form button:disabled {
   border-radius: 4px;
-  color: antiquewhite;
   font-weight: 700;
   height: 2em;
-  margin-top: 0.5em;
+  margin-top: 10%;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.page-profile-user form button:enabled {
+  background-color: #34e4ea;
+  border: 2px solid #545454;
+  border-radius: 4px;
+  color: #545454;
+  font-weight: 700;
+  height: 2em;
+  margin-top: 10%;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: fit-content;
 }

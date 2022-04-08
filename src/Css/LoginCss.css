@@ -66,9 +66,10 @@
 }
 
 .div-inputs button:enabled {
-  background-color: #545454;
+  background-color: #34e4ea;
+  border: 2px solid #545454;
   border-radius: 4px;
-  color: antiquewhite;
+  color: #545454;
   font-weight: 700;
   height: 2em;
   margin-top: 0.5em;
@@ -77,6 +78,7 @@
 }
 
 .div-imgs {
+  border-radius: 4px;
   display: flex;
   justify-content: space-around;
   margin-left: 10%;
@@ -89,6 +91,7 @@
 }
 
 .div-imgs div img {
+  border-radius: 4px;
   height: 100%;
   object-fit: cover;
   width: 100%;

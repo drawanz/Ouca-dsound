@@ -27,18 +27,18 @@ export default class Profile extends Component {
   }
 
   async requestUser() {
-    const { name, email, description, image } = await getUser();
-    this.setState({ name, email, description, image });
+    const { name, email, image } = await getUser();
+    this.setState({ name, email, image });
   }
 
   render() {
-    const { name, email, description, defaultDescription, image,
+    const { name, email, defaultDescription, image,
       defaultImage } = this.state;
 
     return (
       <div className="page-profile" data-testid="page-profile">
         <Header />
-        <div className="page-profile-user">
+        <div className="page-profile-user-container">
           {name === ''
             ? <Carregando />
             : (
@@ -48,20 +48,40 @@ export default class Profile extends Component {
                 ) : (
                   <img src={ defaultImage } alt="profile" data-testid="profile-image" />
                 )}
-                <p>{ `Nome: ${name}` }</p>
-                <p>{ `Email: ${email}` }</p>
-                { description ? (
-                  <p>{ description }</p>
-                ) : (
-                  <p>{ defaultDescription }</p>
-                )}
-                <Link to="/profile/edit">
-                  <button
-                    type="button"
-                  >
-                    Editar perfil
-                  </button>
-                </Link>
+                <p>{ defaultDescription }</p>
+                <form>
+                  <label htmlFor="name">
+                    Nome:
+                    <input
+                      data-testid="edit-input-name"
+                      type="text"
+                      name="name"
+                      value={ name }
+                      id="name"
+                      onChange={ this.handleChange }
+                    />
+                  </label>
+                  <label htmlFor="email">
+                    E-mail:
+                    <input
+                      data-testid="edit-input-email"
+                      type="email"
+                      name="email"
+                      value={ email }
+                      id="email"
+                      onChange={ this.handleChange }
+                    />
+                  </label>
+
+                  <Link to="/profile/edit">
+                    <button
+                      type="button"
+                    >
+                      Editar perfil
+                    </button>
+                  </Link>
+
+                </form>
               </div>
             )}
         </div>
