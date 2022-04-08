@@ -18,6 +18,10 @@ a {
   justify-content: space-around;
 }
 
+.container-user p {
+  padding-left: 0.5em;
+}
+
 .header-component p:hover {
   color: rgb(20, 19, 19);
 }

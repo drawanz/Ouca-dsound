@@ -17,18 +17,22 @@
   justify-self: flex-end;
 }
 
+.footer p {
+  padding: 0 1em;
+}
+
 .container-logo img {
   width: 15%;
 }
 
 .container-icones {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 10%;
 }
 
 .container-corporation {
-  font-size: small;
+  font-size: smaller;
   width: 10%;
 }
 

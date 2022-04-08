@@ -36,9 +36,9 @@ export default class Profile extends Component {
       defaultImage } = this.state;
 
     return (
-      <div className="page-profile" data-testid="page-profile">
+      <div className="container-page-profile" data-testid="page-profile">
         <Header />
-        <div className="page-profile-user-container">
+        <div className="page-profile">
           {name === ''
             ? <Carregando />
             : (
