@@ -39,17 +39,24 @@ export default class Album extends Component {
         <div className="page-album-selected">
           {musics.length > 0
             && (
-              musics.map((music, index) => (
-                index !== 0
-                    && (
-                      <div key={ index } className="music-selected">
-                        <MusicCard
-                          trackName={ music.trackName }
-                          trackId={ music.trackId }
-                          previewUrl={ music.previewUrl }
-                          artwork={ music.artworkUrl100 }
-                        />
-                      </div>)))
+              <div>
+                <h1>
+                  { `Álbum ${musics[1].collectionName}` }
+                </h1>
+                {musics.map((music, index) => (
+                  index !== 0
+                      && (
+                        <div key={ index } className="music-selected">
+                          <MusicCard
+                            trackName={ music.trackName }
+                            trackId={ music.trackId }
+                            previewUrl={ music.previewUrl }
+                            artwork={ music.artworkUrl100 }
+                            artistName={ music.artistName }
+                            collectionName={ music.collectionName }
+                          />
+                        </div>)))}
+              </div>
             ) }
         </div>
         <Footer />

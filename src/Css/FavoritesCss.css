@@ -1,0 +1,31 @@
+.page-favorites {
+  background-image: url('/home/leonidas/projetosTrybe/projeto12-trybeTunes/sd-019-c-project-trybetunes/src/images/Love.svg');
+  background-position-x: right;
+  background-position-y: 90%;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container-favorites {
+  align-self: center;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  margin: 3%;
+}
+
+.container-favorites h1 {
+  font-weight: 700;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+@media screen and ( max-width : 1000px ) {
+
+  .page-favorites {
+    background-image: none;
+  }
+}

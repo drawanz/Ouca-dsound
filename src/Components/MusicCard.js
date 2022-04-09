@@ -32,8 +32,9 @@ export default class MusicCard extends Component {
   async handleChange({ target }) {
     const { name } = target;
     const value = target.checked;
-    const { trackName, previewUrl, trackId } = this.props;
-    const obj = { trackName, previewUrl, trackId };
+    const { trackName, previewUrl, trackId, artwork,
+      collectionName, artistName } = this.props;
+    const obj = { trackName, previewUrl, trackId, artwork, collectionName, artistName };
 
     this.setState({
       [name]: value,
@@ -74,7 +75,8 @@ export default class MusicCard extends Component {
 
   render() {
     const { loading, favorite } = this.state;
-    const { trackName, previewUrl, trackId, handleClick, artwork } = this.props;
+    const { trackName, previewUrl, trackId, handleClick, artwork,
+      artistName } = this.props;
 
     return (
       <section className="section-container">
@@ -84,6 +86,7 @@ export default class MusicCard extends Component {
           ) : (
             <div className="container-music">
               <div className="container-img-and-name">
+                {artistName}
                 <img src={ artwork } alt={ artwork } />
                 <div className="container-name-music">
                   <p>{trackName}</p>

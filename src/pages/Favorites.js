@@ -3,6 +3,9 @@ import Header from '../Components/Header';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Carregando from '../Components/Carregando';
 import MusicCard from '../Components/MusicCard';
+import Footer from '../Components/Footer';
+import FavoriteCss from '../Css/FavoritesCss.css';
+import Love from '../images/Love.svg';
 
 export default class Favorites extends Component {
   constructor() {
@@ -11,12 +14,10 @@ export default class Favorites extends Component {
     this.state = {
       favorites: [],
       loading: false,
-      // reloadPage: false,
     };
 
     this.recoverFavorites = this.recoverFavorites.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handleClick2 = this.handleClick2.bind(this);
   }
 
   componentDidMount() {
@@ -25,10 +26,6 @@ export default class Favorites extends Component {
 
   handleClick() {
     this.recoverFavorites();
-  }
-
-  handleClick2() {
-    // this.setState({ reloadPage: false });
   }
 
   async recoverFavorites() {
@@ -42,21 +39,26 @@ export default class Favorites extends Component {
     const { favorites, loading } = this.state;
 
     return (
-      <div data-testid="page-favorites">
+      <div className="page-favorites">
         <Header />
-        <h1>Favorites</h1>
-        {loading ? <Carregando />
-          : favorites.map(({ trackName, previewUrl, trackId }, index) => (
-            <MusicCard
-              key={ index }
-              trackName={ trackName }
-              previewUrl={ previewUrl }
-              trackId={ trackId }
-              handleClick={ this.handleClick }
-            />
-          ))}
-        {/* <button type="button" onClick={ this.handleClick }>aa</button>
-        <button type="button" onClick={ this.handleClick2 }>aa2</button> */}
+        <div className="container-favorites">
+          <h1>Favorites</h1>
+          {loading ? <Carregando />
+            : favorites.map((music, index) => (
+              <div className="container-favorite-music" key={ index }>
+                <MusicCard
+                  artistName={ music.artistName }
+                  collectionName={ music.collectionName }
+                  artwork={ music.artwork }
+                  trackName={ music.trackName }
+                  previewUrl={ music.previewUrl }
+                  trackId={ music.trackId }
+                  handleClick={ this.handleClick }
+                />
+              </div>
+            ))}
+        </div>
+        <Footer />
       </div>
     );
   }

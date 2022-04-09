@@ -1,8 +1,12 @@
 .container-page-profile {
+  background-image: url('/home/leonidas/projetosTrybe/projeto12-trybeTunes/sd-019-c-project-trybetunes/src/images/undraw_mobile_user_re_xta4.svg');
+  background-position-x: right;
+  background-position-y: 90%;
+  background-repeat: no-repeat;
+  background-size: 30%;
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: auto;
   width: 100%;
 }
 
@@ -17,12 +21,12 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin: 3%;
 }
 
 .page-profile-user img {
   border-radius: 4px;
   margin-bottom: 5%;
-  margin-top: 10%;
   width: 60%;
 }
 
@@ -74,4 +78,11 @@
   padding-left: 8px;
   padding-right: 8px;
   width: fit-content;
+}
+
+@media screen and ( max-width : 1000px ) {
+
+  .container-page-profile {
+    background-image: none;
+  }
 }

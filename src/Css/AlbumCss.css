@@ -16,5 +16,13 @@
 
 .page-album-selected {
   align-self: center;
+  display: flex;
   flex: 1 0 auto;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.page-album-selected h1 {
+  margin: 1rem;
+  text-align: center;
 }
