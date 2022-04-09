@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Header from '../Components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../Components/MusicCard';
+// eslint-disable-next-line no-unused-vars
 import AlbumCss from '../Css/AlbumCss.css';
+import Footer from '../Components/Footer';
 
 export default class Album extends Component {
   constructor() {
@@ -32,7 +34,7 @@ export default class Album extends Component {
     const { musics } = this.state;
 
     return (
-      <div data-testid="page-album">
+      <div className="page-album">
         <Header />
         <div className="page-album-selected">
           {musics.length > 0
@@ -50,6 +52,7 @@ export default class Album extends Component {
                       </div>)))
             ) }
         </div>
+        <Footer />
       </div>
     );
   }

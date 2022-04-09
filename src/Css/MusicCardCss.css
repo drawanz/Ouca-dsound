@@ -1,52 +1,50 @@
-/* * {
-  border: 0;
-  box-sizing: inherit;
-  font: inherit;
-  font-size: 100%;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-} */
-
-.container-music-card {
-  border: 2px solid;
+.section-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.container-music-card input {
-  /* order: 1; */
-  /* display: none; */
-  width: 30px;
-  height: 30px;
+.div-container {
+  align-items: center;
+  background-color: rgb(223, 216, 208);
+  border: 2px solid #545454;
+  border-radius: 12px;
+  display: flex;
+  flex: 1 0 auto;
+  height: 22rem;
+  justify-content: center;
+  margin: 1rem;
+  width: 100%;
 }
 
-.heart-favorited {
-  /* order: 2; */
-  position: relative;
-  color: red;
-  bottom: 2px;
-  /* left: 22px; */
-  right: 20px;
-  width: 30px;
-  height: 30px;
-
+.container-img-and-name {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.heart-not-favorited {
-  /* order: 2; */
-  width: 30px;
-  height: 30px;
-
-  border: 2px solid red;
-
-  bottom: 2px;
-  /* left: 22px; */
-  right: 20px;
-
-
-  position: relative;
-  color: white;
+.container-img-and-name img {
+  margin-bottom: 1rem;
 }
-/* 
-.container-music-card p {
-  text-align: center;
-} */
+
+.container-music {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.container-music img {
+  height: 7rem;
+  width: 7rem;
+}
+
+.container-name-music {
+  display: flex;
+}
+
+.container-name-music p {
+  padding-right: 1rem;
+}

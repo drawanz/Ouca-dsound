@@ -8,15 +8,13 @@
   vertical-align: baseline;
 }
 
-.page-album-selected {
-  background-color: aquamarine;
+.page-album {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-left: 10%;
-  width: 80%;
+  flex-direction: column;
+  height: 100%;
 }
 
-.music-selected {
-  border: 2px solid red;
+.page-album-selected {
+  align-self: center;
+  flex: 1 0 auto;
 }
