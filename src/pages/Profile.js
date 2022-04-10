@@ -40,7 +40,7 @@ export default class Profile extends Component {
         <Header />
         <div className="page-profile">
           {name === ''
-            ? <Carregando />
+            ? <div className="loader-component"><Carregando /></div>
             : (
               <div className="page-profile-user">
                 { image ? (

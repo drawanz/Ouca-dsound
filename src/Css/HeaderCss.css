@@ -50,7 +50,24 @@ a {
   border-radius: 4px;
   height: 2em;
   object-fit: cover;
+  object-position: 50% 20%;
   width: 3em;
+}
+
+.loader-component {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.loader-component-header > .loader {
+  border: 3.2px solid #f3f1f1;
+  border-radius: 55%;
+  border-top: 3.2px solid #34e4ea;
+  height: 20px;
+  width: 20px;
 }
 
 @media screen and ( max-width : 1200px ) {

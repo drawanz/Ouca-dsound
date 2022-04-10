@@ -42,8 +42,8 @@ export default class Favorites extends Component {
       <div className="page-favorites">
         <Header />
         <div className="container-favorites">
-          <h1>Favorites</h1>
-          {loading ? <Carregando />
+          {!loading && <h1>Favorites</h1>}
+          {loading ? <div className="loader-component"><Carregando /></div>
             : favorites.map((music, index) => (
               <div className="container-favorite-music" key={ index }>
                 <MusicCard

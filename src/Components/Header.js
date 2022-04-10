@@ -5,6 +5,7 @@ import Logo from '../images/Logo.png';
 import userImage from '../images/userImage.png';
 // eslint-disable-next-line no-unused-vars
 import HeaderCss from '../Css/HeaderCss.css';
+import Carregando from './Carregando';
 
 export default class Header extends Component {
   constructor() {
@@ -45,7 +46,7 @@ export default class Header extends Component {
         {loading
           ? (
             <div className="container-user">
-              <p>Carregando...</p>
+              <div className="loader-component-header"><Carregando /></div>
             </div>
           )
           : (

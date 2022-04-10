@@ -95,7 +95,7 @@ export default class ProfileEdit extends Component {
         <Header />
         <div className="container-form-profile-edit">
           {loading === true
-            ? <Carregando />
+            ? <div className="loader-component"><Carregando /></div>
             : (
               <form>
                 <h1>Editar perfil</h1>

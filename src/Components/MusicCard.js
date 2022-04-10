@@ -82,7 +82,7 @@ export default class MusicCard extends Component {
       <section className="section-container">
         <div className="div-container">
           {loading ? (
-            <Carregando />
+            <div className="loader-component-music-card"><Carregando /></div>
           ) : (
             <div className="container-music">
               <div className="container-img-and-name">

@@ -53,6 +53,14 @@
 }
 
 .container-name-music p {
-  text-align: center;
   padding-bottom: 2rem;
+  text-align: center;
+}
+
+.loader-component-music-card > .loader {
+  border: 3.2px solid #545454;
+  border-radius: 55%;
+  border-top: 3.2px solid #34e4ea;
+  height: 60px;
+  width: 60px;
 }
