@@ -72,7 +72,7 @@ export default class Search extends Component {
       <div className="page-search">
         <Header />
         {loading
-          ? (<Carregando />)
+          ? (<div className="loader-component"><Carregando /></div>)
           : (
             <form className="form-search">
               <input
@@ -92,33 +92,33 @@ export default class Search extends Component {
                 Pesquisar
               </button>
             </form>)}
-        {searchResult.length === 0
-          ? (
-            <div className="nao-encontrado p-search">
-              <p className="resultado-search">Nenhum álbum foi encontrado</p>
+        {searchResult.length > 0 && loading === false && (
+          // ? (
+          //   <div className="nao-encontrado p-search">
+          //     <p className="resultado-search">Nenhum álbum foi encontrado</p>
+          //   </div>
+          // )
+          // : (
+          <div className="container-busca-encontrada p-search">
+            <p className="resultado-search">
+              { `Álbuns de:  ${resultArtistBandName}` }
+            </p>
+            <div className="albuns">
+              {searchResult.map(({ collectionId, collectionName, artworkUrl100 }) => (
+                <div key={ collectionId } className="album">
+                  <Link
+                    to={ `/album/${collectionId}` }
+                    data-testid={ `link-to-album-${collectionId}` }
+                  >
+                    <div>
+                      <img src={ artworkUrl100 } alt={ artworkUrl100 } />
+                    </div>
+                    <p>{ collectionName }</p>
+                  </Link>
+                </div>))}
             </div>
-          )
-          : (
-            <div className="container-busca-encontrada p-search">
-              <p className="resultado-search">
-                { `Álbuns de:  ${resultArtistBandName}` }
-              </p>
-              <div className="albuns">
-                {searchResult.map(({ collectionId, collectionName, artworkUrl100 }) => (
-                  <div key={ collectionId } className="album">
-                    <Link
-                      to={ `/album/${collectionId}` }
-                      data-testid={ `link-to-album-${collectionId}` }
-                    >
-                      <div>
-                        <img src={ artworkUrl100 } alt={ artworkUrl100 } />
-                      </div>
-                      <p>{ collectionName }</p>
-                    </Link>
-                  </div>))}
-              </div>
-            </div>
-          ) }
+          </div>
+        ) }
         <Footer />
       </div>
     );

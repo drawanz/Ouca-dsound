@@ -47,12 +47,12 @@
 }
 
 .container-name-music {
+  align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .container-name-music p {
-  padding-right: 1rem;
   text-align: center;
-  width: 80%;
+  padding-bottom: 2rem;
 }
