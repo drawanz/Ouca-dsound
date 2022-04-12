@@ -13,6 +13,8 @@
 }
 
 .page-album-selected h1 {
+  color: #545454;
+  font-style: italic;
   margin: 1rem;
   text-align: center;
 }

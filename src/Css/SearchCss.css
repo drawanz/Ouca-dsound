@@ -7,10 +7,11 @@
 }
 
 .form-search input {
-  border: 2px solid #545454;
+  border: 1px solid #545454;
   border-radius: 5px;
   height: 2em;
   padding: 0 0.5em;
+  margin-bottom: 1em;
   width: 11em;
 }
 
@@ -26,9 +27,10 @@
 
 .form-search button:enabled {
   background-color: #34e4ea;
-  border: 2px solid #545454;
+  border: 1px solid #545454;
   border-radius: 4px;
   color: #545454;
+  cursor: pointer;
   font-weight: 700;
   height: 2em;
   margin-top: 0.5em;
@@ -66,6 +68,7 @@
 }
 
 .album div {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -73,12 +76,14 @@
 
 .album img {
   border-radius: 5px;
+  cursor: pointer;
   height: auto;
   object-fit: cover;
   width: 5rem;
 }
 
 .album p {
+  cursor: pointer;
   text-align: center;
 }
 
@@ -90,9 +95,9 @@
 
 
 .p-search .resultado-search {
-  background-color: #545454;
   border-radius: 4px;
-  color: antiquewhite;
+  color: #545454;
+  font-style: italic;
   font-weight: 700;
   height: 1em;
   margin-top: 0.5em;

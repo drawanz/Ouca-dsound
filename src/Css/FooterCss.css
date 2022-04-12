@@ -22,6 +22,10 @@
   width: 10%;
 }
 
+.container-icones > * {
+  cursor: pointer;
+}
+
 .container-corporation {
   font-size: smaller;
   width: 10%;

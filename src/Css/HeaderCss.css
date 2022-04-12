@@ -29,6 +29,10 @@ a {
   width: 20%;
 }
 
+.container-links > * {
+  cursor: pointer;
+}
+
 .container-user {
   align-items: center;
   display: flex;

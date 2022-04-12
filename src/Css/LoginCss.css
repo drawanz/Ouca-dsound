@@ -40,7 +40,7 @@
 }
 
 .div-inputs input {
-  border: 2px solid #545454;
+  border: 1px solid #545454;
   border-radius: 5px;
   height: 2em;
   margin-top: 3%;
@@ -60,9 +60,10 @@
 
 .div-inputs button:enabled {
   background-color: #34e4ea;
-  border: 2px solid #545454;
+  border: 1px solid #545454;
   border-radius: 4px;
   color: #545454;
+  cursor: pointer;
   font-weight: 700;
   height: 2em;
   margin-top: 0.5em;
