@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-// import { FaHeart } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
+import { FiHeart } from 'react-icons/fi';
 import {
   addSong,
   getFavoriteSongs,
@@ -90,16 +91,20 @@ export default class MusicCard extends Component {
                 <img src={ artwork } alt={ artwork } />
                 <div className="container-name-music">
                   <p>{trackName}</p>
-                  <label htmlFor="inputFavorita">
+                  {/* {favorite ? <HiHeart className="icons-heart" />
+                    : <HiOutlineHeart className="icons-heart" /> } */}
+                  <label htmlFor={ trackId }>
                     <input
                       name="favorite"
-                      id="inputFavorita"
+                      id={ trackId }
                       data-testid={ `checkbox-music-${trackId}` }
                       type="checkbox"
                       checked={ favorite }
                       onClick={ handleClick }
                       onChange={ this.handleChange }
                     />
+                    {favorite ? <FaHeart className="icons-heart icon-true" />
+                      : <FiHeart className="icons-heart" /> }
                   </label>
                 </div>
               </div>
@@ -108,11 +113,6 @@ export default class MusicCard extends Component {
                 O seu navegador não suporta o elemento
                 <code>audio</code>
               </audio>
-              {/* {favorite ? (
-                <FaHeart className="heart-favorited" />
-              ) : (
-                <FaHeart className="heart-not-favorited" />
-              )} */}
             </div>
           )}
         </div>
