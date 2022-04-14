@@ -78,7 +78,13 @@ export default class Login extends Component {
             <img className="img" src={ Logo } alt="logo" />
             <p>DSound</p>
           </header>
-          <form className="form-login">
+          <form
+            className="form-login"
+            onSubmit={ () => {
+              preventDefault();
+              this.buttonClick();
+            } }
+          >
             <h1>Faça o login e ouça suas músicas favoritas!</h1>
             <div className="div-inputs">
               <label htmlFor="login-name-input">
@@ -102,9 +108,9 @@ export default class Login extends Component {
                 />
               </label>
               <button
-                type="button"
+                type="submit"
                 data-testid="login-submit-button"
-                onClick={ this.buttonClick }
+                // onClick={ this.buttonClick }
                 disabled={ isEnterButtonDisabled }
               >
                 Entrar
