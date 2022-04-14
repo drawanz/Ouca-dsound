@@ -31,7 +31,8 @@ export default class Search extends Component {
     }), () => this.validationCheck());
   }
 
-  async buttonClick() {
+  async buttonClick(event) {
+    event.preventDefault();
     const { artistBandName } = this.state;
 
     this.setState({
@@ -74,7 +75,7 @@ export default class Search extends Component {
         {loading
           ? (<div className="loader-component"><Carregando /></div>)
           : (
-            <form className="form-search">
+            <form className="form-search" onSubmit={ this.buttonClick }>
               <input
                 name="artistBandName"
                 data-testid="search-artist-input"
@@ -84,10 +85,10 @@ export default class Search extends Component {
               />
 
               <button
-                onClick={ this.buttonClick }
+                // onClick={ this.buttonClick }
                 disabled={ isSearchButtonDisabled }
                 data-testid="search-artist-button"
-                type="button"
+                type="submit"
               >
                 Pesquisar
               </button>

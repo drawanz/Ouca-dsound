@@ -37,7 +37,8 @@ export default class Login extends Component {
     }), () => this.validationCheck());
   }
 
-  async buttonClick() {
+  async buttonClick(event) {
+    event.preventDefault();
     const { loginName, loginEmail } = this.state;
 
     this.setState({
@@ -80,9 +81,7 @@ export default class Login extends Component {
           </header>
           <form
             className="form-login"
-            onSubmit={ () => {
-              this.buttonClick();
-            } }
+            onSubmit={ this.buttonClick }
           >
             <h1>Faça o login e ouça suas músicas favoritas!</h1>
             <div className="div-inputs">
