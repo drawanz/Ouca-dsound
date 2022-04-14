@@ -81,7 +81,6 @@ export default class Login extends Component {
           <form
             className="form-login"
             onSubmit={ () => {
-              preventDefault();
               this.buttonClick();
             } }
           >
