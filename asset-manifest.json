@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Ouca-dsound/static/css/main.7e8663fa.chunk.css",
-    "main.js": "/Ouca-dsound/static/js/main.73c44ce1.chunk.js",
-    "main.js.map": "/Ouca-dsound/static/js/main.73c44ce1.chunk.js.map",
+    "main.js": "/Ouca-dsound/static/js/main.3af8e6ac.chunk.js",
+    "main.js.map": "/Ouca-dsound/static/js/main.3af8e6ac.chunk.js.map",
     "runtime-main.js": "/Ouca-dsound/static/js/runtime-main.52ca3490.js",
     "runtime-main.js.map": "/Ouca-dsound/static/js/runtime-main.52ca3490.js.map",
     "static/js/2.4da96fb2.chunk.js": "/Ouca-dsound/static/js/2.4da96fb2.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.52ca3490.js",
     "static/js/2.4da96fb2.chunk.js",
     "static/css/main.7e8663fa.chunk.css",
-    "static/js/main.73c44ce1.chunk.js"
+    "static/js/main.3af8e6ac.chunk.js"
   ]
 }
