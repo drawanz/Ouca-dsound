@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-max-depth */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import { Redirect, Route } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Carregando from '../Components/Carregando';
@@ -40,6 +41,7 @@ export default class Login extends Component {
   async buttonClick(event) {
     event.preventDefault();
     const { loginName, loginEmail } = this.state;
+    const { history } = this.props;
 
     this.setState({
       loading: true,
@@ -48,7 +50,7 @@ export default class Login extends Component {
       this.setState({
         loading: false,
         redirect: true,
-      });
+      }, () => history.push('/search'));
     });
   }
 
@@ -131,10 +133,14 @@ export default class Login extends Component {
           </div>
         </div>
         <Footer />
-        <Route exact path="/">
+        {/* <Route exact path="/">
           {redirect && <Redirect to="/search" />}
-        </Route>
+        </Route> */}
       </div>
     );
   }
 }
+
+Login.propTypes = {
+  history: propTypes.object,
+}.isRequired;
