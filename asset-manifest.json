@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Ouca-dsound/static/css/main.7e8663fa.chunk.css",
-    "main.js": "/Ouca-dsound/static/js/main.d1ddd6f9.chunk.js",
-    "main.js.map": "/Ouca-dsound/static/js/main.d1ddd6f9.chunk.js.map",
+    "main.js": "/Ouca-dsound/static/js/main.87d3aa3b.chunk.js",
+    "main.js.map": "/Ouca-dsound/static/js/main.87d3aa3b.chunk.js.map",
     "runtime-main.js": "/Ouca-dsound/static/js/runtime-main.52ca3490.js",
     "runtime-main.js.map": "/Ouca-dsound/static/js/runtime-main.52ca3490.js.map",
-    "static/js/2.cbf0e39e.chunk.js": "/Ouca-dsound/static/js/2.cbf0e39e.chunk.js",
-    "static/js/2.cbf0e39e.chunk.js.map": "/Ouca-dsound/static/js/2.cbf0e39e.chunk.js.map",
+    "static/js/2.4da96fb2.chunk.js": "/Ouca-dsound/static/js/2.4da96fb2.chunk.js",
+    "static/js/2.4da96fb2.chunk.js.map": "/Ouca-dsound/static/js/2.4da96fb2.chunk.js.map",
     "index.html": "/Ouca-dsound/index.html",
     "static/css/main.7e8663fa.chunk.css.map": "/Ouca-dsound/static/css/main.7e8663fa.chunk.css.map",
-    "static/js/2.cbf0e39e.chunk.js.LICENSE.txt": "/Ouca-dsound/static/js/2.cbf0e39e.chunk.js.LICENSE.txt",
+    "static/js/2.4da96fb2.chunk.js.LICENSE.txt": "/Ouca-dsound/static/js/2.4da96fb2.chunk.js.LICENSE.txt",
     "static/media/FavoritesCss.css": "/Ouca-dsound/static/media/Love.295cbf0b.svg",
     "static/media/manOutside.4ad43c73.png": "/Ouca-dsound/static/media/manOutside.4ad43c73.png",
     "static/media/manWorking.3eda3292.png": "/Ouca-dsound/static/media/manWorking.3eda3292.png",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.52ca3490.js",
-    "static/js/2.cbf0e39e.chunk.js",
+    "static/js/2.4da96fb2.chunk.js",
     "static/css/main.7e8663fa.chunk.css",
-    "static/js/main.d1ddd6f9.chunk.js"
+    "static/js/main.87d3aa3b.chunk.js"
   ]
 }
